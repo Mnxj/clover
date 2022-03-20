@@ -1,0 +1,15 @@
+.siteFooter {
+    padding: 2%;
+    background: #31363b !important;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background 1s;
+}
+
+.siteFooter:after, .siteFooter:before {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both;
+}

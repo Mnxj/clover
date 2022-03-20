@@ -32,3 +32,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## install
+```shell
+# 我们使用front-matter处理元信息和获取需要的Markdown内容
+yarn add front-matter remark remark-html --save
+
+# 解析markdown文件
+yarn add react-markdown
+# 代码高亮
+# vscDarkPlus vscode 暗色主题
+# darcula  webstorm 暗色主题
+# coyWithoutShadows 上面展示的效果
+yarn add react-syntax-highlighter
+yarn add @types/react-syntax-highlighter
+# 处理表格和一些勾选项
+yarn add remark-gfm
+```
