@@ -5,20 +5,19 @@ import {PrismAsyncLight, PrismLight} from "react-syntax-highlighter"
 const SyntaxHighlighter =
     typeof window === "undefined" ? PrismLight : PrismAsyncLight
 
-export const Code = ({node, inline, className, data, ...props}: any) => {
+export const Code = ({node, inline, className, children, ...props}: any) => {
     const match = /language-(\w+)/.exec(className || '')
     return !inline && match ? (
         <SyntaxHighlighter
+            children={String(children).replace(/\n$/, '')}
             language={match[1]}
             style={darcula}
             PreTag="div"
             {...props}
-        >
-            {data}
-        </SyntaxHighlighter>
+        />
     ) : (
         <code className={className} {...props}>
-            {data}
+            {children}
         </code>
     )
 
