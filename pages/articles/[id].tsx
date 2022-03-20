@@ -7,8 +7,6 @@ import {Markdown} from "../../components/MarkDown/markDown";
 
 
 const Article = ({postData}: { postData: PostData }) => {
-
-
     return (
         <Layout title="share.png">
             <Head>

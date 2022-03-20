@@ -8,6 +8,8 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
+
+yarn start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -49,4 +51,5 @@ yarn add react-syntax-highlighter
 yarn add @types/react-syntax-highlighter
 # 处理表格和一些勾选项
 yarn add remark-gfm
+
 ```

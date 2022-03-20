@@ -1,6 +1,6 @@
 .siteFooter {
     padding: 2%;
-    background: #31363b !important;
+    background: rgba(255, 255, 255, .8);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -12,4 +12,18 @@
     display: table;
     table-layout: fixed;
     clear: both;
+}
+
+.siteInfo {
+    text-align: center;
+    font-size: 13px;
+    color: #b9b9b9
+}
+
+.siteInfo a {
+    color: #b9b9b9
+}
+
+.siteInfo a:hover {
+    color: orange
 }
