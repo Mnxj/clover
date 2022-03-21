@@ -2,10 +2,11 @@ import ReactMarkdown from 'react-markdown'
 import {Code} from "./code";
 import remarkGfm from "remark-gfm";
 import React from "react";
+import styles from "./Markdown.module.css"
 
-export const Markdown: React.FC<{ source: string }> = (props) => {
+export const MarkDown: React.FC<{ source: string }> = (props) => {
     return (
-        <div style={{width: '100%'}} id="markdown" className="devii-markdown">
+        <div id="markdown" className={styles.markdownContent}>
             <ReactMarkdown
                 key="content"
                 remarkPlugins={[remarkGfm]}

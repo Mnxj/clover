@@ -12,7 +12,7 @@ const absPath = (dir: string) => {
 }
 
 /**
- * 获取文件夹中 Markdown 文件名列表，以数组形式返回
+ * 获取文件夹中 MarkDown 文件名列表，以数组形式返回
  * @param {*} dir
  * @returns
  */
@@ -26,7 +26,7 @@ export const getFileIds = async (dir = "./") => {
 }
 
 /**
- * 获取单个 Markdown 文件的内容
+ * 获取单个 MarkDown 文件的内容
  * @param {*} dir
  * @param {*} id
  * @returns

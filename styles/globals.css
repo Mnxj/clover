@@ -228,22 +228,31 @@ ol li:hover::before {
     -o-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
 }
+
 /*h2*/
 #markdown h2 {
     cursor: pointer;
     transition: all 0.3s ease-out;
 }
+
 #markdown h2:after {
     content: "\00B6";
     position: absolute;
     color: #ff6d6d;
-    font-family: 'Merriweather Sans',Helvetica,Tahoma,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei',sans-serif;
+    font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     padding-left: 6px;
     font-size: 1.13em;
 }
+
 #markdown h2:hover {
     padding-left: 10px;
 }
+
+#markdown {
+    animation: main 1s;
+}
+
+
 /* Layout */
 #main-container {
     transition-duration: .5s;

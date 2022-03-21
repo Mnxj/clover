@@ -3,7 +3,8 @@ import Layout from "../../components/layout";
 import Head from "next/head";
 import {PostData} from "../../type/post-data";
 import {Params} from "../../type/params";
-import {Markdown} from "../../components/MarkDown/markDown";
+import {MarkDown} from "../../components/markDown/MarkDown";
+import {PageHeader} from "../../components/markDown/PageHeader/PageHeader";
 
 
 const Article = ({postData}: { postData: PostData }) => {
@@ -13,12 +14,8 @@ const Article = ({postData}: { postData: PostData }) => {
                 <title>{postData.title}</title>
                 <meta name="description" content={postData.description}/>
             </Head>
-            <h1>{postData.title}</h1>
-            <p className="time">日期：
-                <time dateTime="${postData.dateFriendly}">{postData.dateYMD}</time>
-            </p>
-            <p className="words">{postData.wordCount}</p>
-            <Markdown source={postData.html} />
+            <PageHeader title={postData.title} dateYMD={postData.dateYMD} wordCount={postData.wordCount} />
+            <MarkDown source={postData.html} />
         </Layout>
     );
 }
