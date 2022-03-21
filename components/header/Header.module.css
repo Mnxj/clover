@@ -1,0 +1,103 @@
+.headerContainer {
+    width: 100%;
+    height: 75px;
+    background: 0 0;
+    transition: all .4s ease;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+}
+
+.headerContainer:hover {
+    background-color: #fff;
+    box-shadow: 0 1px 40px -8px rgba(0,0,0, 0.5);
+}
+
+
+.headerContainer:after, .headerContainer:before {
+    content: "";
+    display: table;
+    table-layout: fixed
+}
+
+.headerContainer:after {
+    clear: both
+}
+
+.headerTop {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+
+.headerBranding {
+    -webkit-animation: headerTop 1s;
+    animation: headerTop 1s;
+    float: left;
+    position: relative;
+    height: 75px;
+    line-height: 75px;
+    margin-left: -6px;
+    margin-right: -6px
+}
+
+.headerTitle {
+    margin: 0
+}
+
+.headerTitle img {
+    height: 40px;
+    margin-top: 17px;
+    opacity: .75;
+    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out
+}
+
+.imageLog:hover {
+    opacity: 1
+}
+
+.searchBox {
+    -webkit-animation: searchBox 1s;
+    animation: searchBox 1s;
+    float: right;
+    height: 75px;
+    line-height: 75px;
+    margin-left: 20px
+}
+
+@-webkit-keyframes headerTop {
+    0% {
+        opacity: 0;
+        transform: translateX(30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@-webkit-keyframes searchBox {
+    0% {
+        opacity: 0;
+        transform: translateX(30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes searchBox {
+    0% {
+        opacity: 0;
+        transform: translateX(30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+

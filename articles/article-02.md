@@ -30,26 +30,41 @@ const name = 'normal';
 const name = 'static';
 ~~~
 ## Simple JSX without editor
-~~~jsx noeditor
-// this is code we want to transpile and render
-// but we do not want to allow editing
-const name = 'noeditor';
-<Testing name={name} />
-~~~
 
-```js
-const ces ;//
-```
-```java
-int x=10;
-```
+- Red
+- Green
+- Blue
+
+* Red
+* Green
+* Blue
+
++ Red
++ Green
++ Blue
+
+1. Red
+2. Green
+3. Blue
+## Simple JSX without editor
+1. Red
+2. Green
+3. Blue
+
+[^1]: 这里是脚注
+
+<u>下划线文本</u>
 
 > Seems like it might be useful!
 > — Dan Abramov, taken entirely out of context
 
-```ts
-// pretty neat huh?
-const test = (arg: string) => {
-  return arg.length > 5;
-};
-```
+**加粗文本** 或者 __加粗文本__
+
+*斜体文本*  或者_斜体文本_
+
+~~删除文本~~
+
+> 一级引用
+> > 二级引用
+> > > 三级引用
+

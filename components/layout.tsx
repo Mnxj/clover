@@ -1,13 +1,17 @@
-import Header from "./header";
-import Footer from "./Footer";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
-const Layout = ({children, title}:any) => {
+const Layout = ({children, title}: any) => {
     return (
-        <>
-            <Header title={title}/>
-            <main>{children}</main>
-            <Footer/>
-        </>
+        <div>
+            <section id="main-container">
+                <div id="main-header" className="site wrapper">
+                    <Header />
+                </div>
+                <main>{children}</main>
+                <Footer/>
+            </section>
+        </div>
     );
 }
 export default Layout

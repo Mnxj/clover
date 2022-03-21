@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
       <Layout>
           <Head>
-              <title>Next.js网站</title>
+              <title>Clover</title>
               <meta
                   name="description"
                   content="这是一个由 Next.js 驱动的网站"

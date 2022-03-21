@@ -1,10 +1,10 @@
-import styles from '../styles/Footer.module.css'
+import styles from './Footer.module.css'
 import Image from 'next/image'
 
 const Footer = () => {
     const soulBg = "/images/soul.gif";
     return (
-        <footer id="soulBg" className={styles.siteFooter} role="contentinfo">
+        <footer id="soulBg" className={styles.footerContainer} role="contentinfo">
             <div className={styles.siteInfo}>
                 <p>「姿や形は問題ではなく、「魂」が問題です。」</p>
                 <p>
@@ -19,11 +19,11 @@ const Footer = () => {
                     rel="noopener noreferrer"
                 >
                     <span className={styles.logo}>
-                        <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16}/>
+                        <Image src="/vercel.svg" alt="Vercel" width={72} height={16}/>
                     </span>
                 </a>
                 <p>
-                    <a href="https://github.com/Mnxj">🐱‍🏍Clover🎶&nbsp;&nbsp;</a>© 2022 幸いです
+                    <a href="https://github.com/Mnxj">🐱‍🏍Clover🎶&nbsp;&nbsp;</a>© 2022 幸いです  全著作権所有.
                 </p>
 
             </div>

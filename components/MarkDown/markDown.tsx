@@ -5,7 +5,7 @@ import React from "react";
 
 export const Markdown: React.FC<{ source: string }> = (props) => {
     return (
-        <div style={{width: '100%'}} className="devii-markdown">
+        <div style={{width: '100%'}} id="markdown" className="devii-markdown">
             <ReactMarkdown
                 key="content"
                 remarkPlugins={[remarkGfm]}
@@ -17,6 +17,7 @@ export const Markdown: React.FC<{ source: string }> = (props) => {
                             node={node}
                             inline={inline}
                             className={className}
+                            children={children}
                             data={data}
                             {...props}
                         />

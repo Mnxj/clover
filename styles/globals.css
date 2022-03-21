@@ -1,16 +1,309 @@
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    cursor: url(https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.8/img/Sakura/cursor/normal.cur), auto;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+img {
+    vertical-align: middle;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+button, input {
+    overflow: visible;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+/*修改remark-gfm插件渲染的勾选*/
+.task-list-item input {
+    border: 2px solid #2196f3;
+    appearance: none;
+    position: relative;
+    height: 16px;
+    width: 16px;
+    transition: all 0.15s ease-out 0s;
+    cursor: pointer;
+    display: inline-block;
+    outline: 0;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.task-list-item input[type="checkbox"]:checked {
+    background: #2196f3;
+}
+
+.task-list-item input[type="checkbox"]:after, .task-list-item input[type="checkbox"]:before {
+    position: absolute;
+    content: "";
+    background: #fff;
+}
+
+.task-list-item input[type="checkbox"]:checked:before {
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 2px;
+}
+
+.task-list-item input[type="checkbox"]:checked:after {
+    right: 3px;
+    bottom: 1px;
+    width: 2px;
+    height: 10px;
+}
+
+.task-list-item input[type="checkbox"]:after {
+    transition: all 0.2s ease-out;
+    transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transition-delay: 0.25s;
+}
+
+.task-list-item input[type="checkbox"]:before {
+    transition: all 0.2s ease-in;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+/*table*/
+
+table {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 30px;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    background: #419eed9e;
+}
+
+table td, table th {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+}
+
+td, th {
+    padding: 0;
+}
+
+th {
+    text-align: inherit;
+}
+
+/*blockquote*/
+
+blockquote {
+    margin: 0 0 1em;
+    padding: 30px 60px;
+    position: relative;
+    quotes: "" "";
+}
+
+blockquote:before {
+    content: "\f10d" !important;
+    font-size: 3rem;
+    position: absolute;
+    top: -25px;
+    left: 12px;
+    color: orange;
+    font-family: FontAwesome;
+}
+
+blockquote:after {
+    content: '\f10e' !important;
+    font-size: 3rem;
+    position: absolute;
+    bottom: -25px;
+    right: -5px;
+    color: orange;
+    font-family: FontAwesome;
+}
+
+blockquote p {
+    margin: 5px 0;
+}
+
+/* p */
+
+#markdown p {
+    color: #797979;
+    line-height: 30px;
+    transition: color 1s;
+}
+
+/* ul ol */
+ol, ul {
+    padding: 0 0 0 12px;
+    list-style: none;
+    counter-reset: ol-li;
+}
+
+li, ul {
+    margin: 5px auto;
+}
+
+ol li:before {
+    display: block;
+    float: left;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    margin: 4px 12px 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #49b1f5;
+    border-radius: 50%;
+    text-align: center;
+    content: counter(ol-li);
+    counter-increment: ol-li;
+    transition: all 0.5s;
+}
+
+ol li:hover::before {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+/*h2*/
+#markdown h2 {
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+#markdown h2:after {
+    content: "\00B6";
+    position: absolute;
+    color: #ff6d6d;
+    font-family: 'Merriweather Sans',Helvetica,Tahoma,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei',sans-serif;
+    padding-left: 6px;
+    font-size: 1.13em;
+}
+#markdown h2:hover {
+    padding-left: 10px;
+}
+/* Layout */
+#main-container {
+    transition-duration: .5s;
+    position: relative;
+    overflow: hidden;
+    z-index: 2
+}
+
+#main-container.open:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 99
+}
+
+#main-container.open {
+    transform: translateX(250px) translateY(0);
+    -webkit-transform: translateX(250px) translateY(0);
+    position: fixed;
+    right: 0;
+    left: 0
+}
+
+/* header */
+.wrapper {
+    animation: fade-in;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation: fade-in .5s
+}
+
+body.dark #main-container, body.dark .wrapper .site-header:hover, body.dark i.iconfont.js-toggle-search.icon-search {
+    background: #31363b !important
+}
+
+
+#main-container, .wrapper {
+    transition: background 1s
+}
+
+.iconfont {
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+    content: "\e90d";
+}
+
+.iconfont.js-toggle-search.icon-search {
+    color: #666;
+    cursor: pointer;
+    font-size: 26px;
+    transition: all .3s ease-in-out
+}
+
+.iconfont.js-toggle-search.icon-search:hover {
+    color: #fe9600
 }
