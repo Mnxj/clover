@@ -9,10 +9,13 @@
 }
 
 .headerContainer:hover {
+    position: fixed;
+    left: 0;
     background-color: #fff;
-    box-shadow: 0 1px 40px -8px rgba(0,0,0, 0.5);
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+    top: 0;
+    z-index: 9999;
 }
-
 
 .headerContainer:after, .headerContainer:before {
     content: "";
@@ -59,12 +62,84 @@
 }
 
 .searchBox {
-    -webkit-animation: searchBox 1s;
-    animation: searchBox 1s;
     float: right;
     height: 75px;
     line-height: 75px;
     margin-left: 20px
+}
+
+.headerTop ul li a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -16px;
+    height: 6px;
+    background-color: #fe9600;
+    width: 100%;
+    max-width: 0;
+    transition: max-width .25s ease-in-out;
+}
+
+.headerTop ul li a {
+    padding: 10px 0;
+    display: inline-block;
+    color: #666;
+}
+
+.headerContainer .lowerContainer {
+    display: block;
+}
+
+.lowerContainer {
+    position: absolute;
+    left: 50%;
+    min-width: 758px;
+    pointer-events: none;
+
+}
+
+.headerTop .lower {
+    display: inline-block;
+    margin: 15px 0 0 10px;
+    font-size: 16px;
+    position: relative;
+    left: -50%;
+    pointer-events: auto !important;
+}
+
+.headerTop ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+.headerTop ul li {
+    float: left;
+    margin: 0 13px;
+    position: relative;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
+.headerTop .lower nav {
+    position: relative;
+    float: right;
+    animation: searchbox .2s;
+    display: block;
+}
+
+.headerTop ul li a:hover {
+    color: #fe9600
+}
+
+.headerTop ul li a:hover:after {
+    max-width: 100%
+}
+
+.searchBox, .headerTop .lowe {
+    -webkit-animation: searchbox 1s;
+    animation: searchbox 1s;
 }
 
 @-webkit-keyframes headerTop {
@@ -99,5 +174,3 @@
         transform: translateX(0)
     }
 }
-
-
