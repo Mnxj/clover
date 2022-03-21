@@ -19,39 +19,30 @@ class MyDocument extends Document {
                 <Head>
                     <link
                         href="/fonts/font.ttf"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/font.eot"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/font.svg"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/font.woff"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/fontawesome.ttf"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/fontawesome.eot"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/fontawesome.svg"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/fontawesome.woff"
-                        rel="stylesheet"
                     />
                     <link
                         href="/fonts/fontawesome.woff2"
-                        rel="stylesheet"
                     />
                 </Head>
                 <body>

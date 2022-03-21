@@ -21,7 +21,7 @@ const Header = () => {
                         <nav>
                             <ul>
                                 {roll.map(item => (
-                                    <li>
+                                    <li key={item.link}>
                                         <Link href={item.link}>
                                             <a>
                                                 <span className={item.span_class}>

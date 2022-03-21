@@ -15,7 +15,6 @@ const Footer = () => {
                 <p></p>
                 <a
                     href="https://vercel.com"
-                    target="_blank"
                     rel="noopener noreferrer"
                 >
                     <span className={styles.logo}>
