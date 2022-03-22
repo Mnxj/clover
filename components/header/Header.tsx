@@ -1,11 +1,26 @@
 import styles from './Header.module.css'
 import {roll} from "./navigationbar";
 import Link from "next/link";
+import {useEffect, useState} from "react";
 
 const Header = () => {
+    const [headerStyles, setHeaderStyles] = useState(false);
+    const handleScroll = () => {
+        if (window.scrollY > 60) {
+            setHeaderStyles(true)
+        } else {
+            setHeaderStyles(false)
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [headerStyles]);
 
     return (
-        <header className={styles.headerContainer}>
+        <header className={headerStyles ? styles.headerWhiteContainer : styles.headerContainer}>
             <div className={styles.headerTop}>
                 <div className={styles.headerBranding}>
                     <h1 className={styles.headerTitle}>
