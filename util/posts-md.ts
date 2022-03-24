@@ -19,7 +19,7 @@ const absPath = (dir: string) => {
 export const getFileIds = async (dir = "./") => {
     const loc = absPath(dir);
     const files = await fsp.readdir(loc);
-
+    console.log(files)
     return files
         .filter((fn) => path.extname(fn) === `.${fileExt}`)
         .map((fn) => path.basename(fn, path.extname(fn)));

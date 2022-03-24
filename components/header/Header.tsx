@@ -38,11 +38,9 @@ const Header = () => {
                                 {roll.map(item => (
                                     <li key={item.link}>
                                         <Link href={item.link}>
-                                            <a>
                                                 <span className={item.span_class}>
                                                     <i className={item.i_class}/>{item.span_text}
                                                 </span>
-                                            </a>
                                         </Link>
                                     </li>
                                 ))}

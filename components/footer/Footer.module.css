@@ -7,13 +7,6 @@
     transition: background 1s;
 }
 
-.footerContainer:after, .footerContainer:before {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    clear: both;
-}
-
 .siteInfo {
     text-align: center;
     font-size: 13px;

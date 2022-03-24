@@ -9,7 +9,7 @@ import {PageHeader} from "../../components/markDown/PageHeader/PageHeader";
 
 const Article = ({postData}: { postData: PostData }) => {
     return (
-        <Layout title="share.png">
+        <Layout>
             <Head>
                 <title>{postData.title}</title>
                 <meta name="description" content={postData.description}/>

@@ -9,11 +9,15 @@ body {
     font-variant: tabular-nums;
     line-height: 1.5715;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-    cursor: url(https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.8/img/Sakura/cursor/normal.cur), auto;
+    cursor: url(/images/cursor/normal.cur), auto;
 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
     display: block;
+}
+
+a, area, button, [role='button'], input:not([type='range']), label, select, summary, textarea {
+    touch-action: manipulation;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,6 +28,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
+}
+
+h1.fes-title, h1.main-title {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #ececec;
+}
+
+h1.fes-title, h1.main-title {
+    transition: border 1s;
 }
 
 h1 {
@@ -47,7 +64,7 @@ a {
 p {
     margin-top: 0;
     margin-bottom: 1em;
-    cursor: url(https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.8/img/Sakura/cursor/texto.cur), auto;
+    cursor: url(/images/cursor/texto.cur), auto;
 }
 
 
@@ -65,6 +82,20 @@ button, input {
 
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+:after, :before {
+    box-sizing: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #69d2e7;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #eee;
 }
 
 
@@ -165,24 +196,23 @@ blockquote {
     quotes: "" "";
 }
 
-blockquote:before {
-    content: "\f10d" !important;
-    font-size: 3rem;
-    position: absolute;
-    top: -25px;
-    left: 12px;
+blockquote:after, blockquote:before {
     color: orange;
     font-family: FontAwesome;
+    font-size: 3rem;
+    position: absolute;
+}
+
+blockquote:before {
+    content: "\f10d" !important;
+    top: -25px;
+    left: 12px;
 }
 
 blockquote:after {
     content: '\f10e' !important;
-    font-size: 3rem;
-    position: absolute;
     bottom: -25px;
     right: -5px;
-    color: orange;
-    font-family: FontAwesome;
 }
 
 blockquote p {
@@ -276,9 +306,10 @@ pre {
     background: #2d2d2d;
     position: relative;
     padding-left: 3.8em;
-    padding-top: 35px!important;
+    padding-top: 35px !important;
     counter-reset: linenumber;
 }
+
 pre:before {
     content: " ";
     position: absolute;
@@ -291,14 +322,28 @@ pre:before {
     box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
     z-index: 2;
 }
+
 code, pre {
     font-family: 'Source Code Pro', consolas, Menlo, "Linux Biolinum", 'Noto Serif SC', sans-serif, monospace !important;
 }
+
 code {
 
 }
 
 /*===下面是通用===*/
+
+.footerContainer:after, .footerContainer:before,
+.homeContre:before, .markdownContent:before, .homeContre:after, .markdownContent:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+.footerContainer:after, .homeContre:after, .markdownContent:after {
+    clear: both;
+}
+
 .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -322,6 +367,31 @@ code {
 
 .fa-quote-right:before {
     content: "\f10e";
+}
+
+.fa-envira:before {
+    content: "\f299";
+}
+
+.icon-time:before {
+    content: "\e63d";
+}
+
+.icon-attention:before {
+    content: "\e626";
+}
+
+.icon-mark:before {
+    content: "\e92d";
+}
+
+.icon-file:before {
+    content: "\e60c";
+}
+
+
+.icon-caidan:before {
+    content: "\e618";
 }
 
 .fa-chevron-down:before {
@@ -391,10 +461,15 @@ body.dark #main-container, body.dark .wrapper .site-header:hover, body.dark i.ic
 }
 
 .iconfont {
+    font-family: iconfont !important;
     font-size: 16px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-broadcast:before {
+    content: "\e681";
 }
 
 .icon-search:before {
@@ -408,7 +483,10 @@ body.dark #main-container, body.dark .wrapper .site-header:hover, body.dark i.ic
     transition: all .3s ease-in-out
 }
 
-.iconfont.js-toggle-search.icon-search:hover {
+.iconfont.js-toggle-search.icon-search:hover,.icon-caidan:hover {
     color: #fe9600
 }
 
+.comments-number {
+    margin: 0 10px;
+}

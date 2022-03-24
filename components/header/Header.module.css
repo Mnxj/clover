@@ -1,4 +1,4 @@
-.headerContainer,.headerWhiteContainer {
+.headerContainer, .headerWhiteContainer {
     width: 100%;
     height: 75px;
     background: 0 0;
@@ -8,7 +8,7 @@
     top: 0;
 }
 
-.headerWhiteContainer,.headerContainer:hover {
+.headerWhiteContainer, .headerContainer:hover {
     position: fixed;
     left: 0;
     background-color: #fff;
@@ -68,7 +68,7 @@
     margin-left: 20px
 }
 
-.headerTop ul li a:after {
+.headerTop ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -80,7 +80,7 @@
     transition: max-width .25s ease-in-out;
 }
 
-.headerTop ul li a {
+.headerTop ul li{
     padding: 10px 0;
     display: inline-block;
     color: #666;
@@ -98,7 +98,7 @@
 
 }
 
-.headerTop .lower {
+.lower {
     display: inline-block;
     margin: 15px 0 0 10px;
     font-size: 16px;
@@ -129,17 +129,27 @@
     display: block;
 }
 
-.headerTop ul li a:hover {
+.headerTop ul li:hover {
+    cursor: pointer;
     color: #fe9600
 }
 
-.headerTop ul li a:hover:after {
+.headerTop ul li:hover:after {
     max-width: 100%
 }
 
 .searchBox, .headerTop .lowe {
     -webkit-animation: searchbox 1s;
     animation: searchbox 1s;
+}
+
+@media (max-width: 1200px) {
+    .lowerContainer {
+        left: 200px;
+    }
+    .lower {
+        left: 15px
+    }
 }
 
 @-webkit-keyframes headerTop {

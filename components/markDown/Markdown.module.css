@@ -5,14 +5,3 @@
     margin-right: auto;
     background-color: transparent!important;
 }
-.markdownContent:before {
-    content: "";
-    display: table;
-    table-layout: fixed;
-}
-.markdownContent:after {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    clear: both;
-}

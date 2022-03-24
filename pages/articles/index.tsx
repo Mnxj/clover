@@ -8,7 +8,7 @@ const postsDir = "articles";
 
 const ArticleIndex = ({ postData }:{postData:[PostData]}) => {
     return (
-        <Layout title="share.png">
+        <Layout>
             <Head>
                 <title>博客列表</title>
                 <meta
@@ -16,11 +16,7 @@ const ArticleIndex = ({ postData }:{postData:[PostData]}) => {
                     content="A list of articles published on this site."
                 />
             </Head>
-
-            <h1>博客列表</h1>
-
-            <aside className="pagelist">
-                {postData.map((post) => (
+            {postData.map((post) => (
                     <Pagelink
                         key={post.id}
                         postsdir={postsDir}
@@ -31,7 +27,7 @@ const ArticleIndex = ({ postData }:{postData:[PostData]}) => {
                         datefriendly={post.dateFriendly}
                     />
                 ))}
-            </aside>
+
         </Layout>
     );
 }
