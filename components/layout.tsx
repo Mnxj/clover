@@ -8,7 +8,7 @@ const Layout = ({children}: any) => {
                 <div id="main-header" className="site wrapper">
                     <Header />
                 </div>
-                <main>{children}</main>
+                {children}
                 <Footer/>
             </section>
         </div>

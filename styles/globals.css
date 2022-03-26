@@ -12,10 +12,6 @@ body {
     cursor: url(/images/cursor/normal.cur), auto;
 }
 
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
-    display: block;
-}
-
 a, area, button, [role='button'], input:not([type='range']), label, select, summary, textarea {
     touch-action: manipulation;
 }
@@ -332,7 +328,7 @@ code {
 }
 
 /*===下面是通用===*/
-
+.markdownContent:before,
 .footerContainer:after, .footerContainer:before,
 .homeContre:before, .markdownContent:before, .homeContre:after, .markdownContent:after {
     content: "";
@@ -443,6 +439,55 @@ code {
     left: 0
 }
 
+
+/*directory*/
+div.directory {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+div.directory>.markdown-navigation {
+    overflow: hidden;
+    position: relative;
+}
+
+.markdown-navigation {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.title-anchor {
+    padding: 0 0 0 12px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.title-level2 {
+    text-decoration: none;
+    transition: 0.3s;
+    color: currentColor;
+    height: 100%;
+}
+
+.title-level2.active {
+    font-weight: 700;
+}
+
+.title-level2:before {
+    background-color: #eee;
+    content: ' ';
+    display: inline-block;
+    height: inherit;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    width: 2px;
+}
+
+.title-level2.active:before {
+    background-color: orange !important;
+}
+
 /* header */
 .wrapper {
     animation: fade-in;
@@ -456,7 +501,7 @@ body.dark #main-container, body.dark .wrapper .site-header:hover, body.dark i.ic
 }
 
 
-#main-container, .wrapper {
+#main-container, .wrapper, .directory {
     transition: background 1s
 }
 
@@ -483,7 +528,7 @@ body.dark #main-container, body.dark .wrapper .site-header:hover, body.dark i.ic
     transition: all .3s ease-in-out
 }
 
-.iconfont.js-toggle-search.icon-search:hover,.icon-caidan:hover {
+.iconfont.js-toggle-search.icon-search:hover, .icon-caidan:hover {
     color: #fe9600
 }
 

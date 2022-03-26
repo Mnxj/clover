@@ -1,5 +1,5 @@
 .homeTop {
-    height: auto !important;
+    height: 100vh !important;
     position: relative;
     overflow: hidden;
     animation: header 1s;
@@ -32,7 +32,7 @@
 
 @media (min-width: 860px) {
     .centerBg {
-        height: 578px !important;
+        height: 100vh !important;
     }
 }
 

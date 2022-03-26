@@ -5,7 +5,7 @@ import {PostData} from "../../type/post-data";
 import {Params} from "../../type/params";
 import {MarkDown} from "../../components/markDown/MarkDown";
 import {PageHeader} from "../../components/markDown/PageHeader/PageHeader";
-
+import React from "react";
 
 const Article = ({postData}: { postData: PostData }) => {
     return (

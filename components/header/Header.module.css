@@ -11,7 +11,7 @@
 .headerWhiteContainer, .headerContainer:hover {
     position: fixed;
     left: 0;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, .95);
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
     top: 0;
     z-index: 9999;
@@ -36,8 +36,6 @@
 
 
 .headerBranding {
-    -webkit-animation: headerTop 1s;
-    animation: headerTop 1s;
     float: left;
     position: relative;
     height: 75px;
@@ -80,17 +78,21 @@
     transition: max-width .25s ease-in-out;
 }
 
-.headerTop ul li{
+.headerTop ul li {
     padding: 10px 0;
     display: inline-block;
     color: #666;
 }
 
 .headerContainer .lowerContainer {
+    display: none;
+}
+
+.headerContainer:hover .lowerContainer, .headerWhiteContainer .lowerContainer {
     display: block;
 }
 
-.lowerContainer {
+.headerTop .lowerContainer {
     position: absolute;
     left: 50%;
     min-width: 758px;
@@ -125,7 +127,6 @@
 .headerTop .lower nav {
     position: relative;
     float: right;
-    animation: searchbox .2s;
     display: block;
 }
 
@@ -138,21 +139,27 @@
     max-width: 100%
 }
 
-.searchBox, .headerTop .lowe {
-    -webkit-animation: searchbox 1s;
-    animation: searchbox 1s;
+.searchBox, .headerTop .lowe, .headerBranding {
+    -webkit-animation: header-top 1s;
+    animation: header-top 1s;
+}
+
+.headerTop .lower nav {
+    -webkit-animation: header-top 1s;
+    animation: header-top 1s;
 }
 
 @media (max-width: 1200px) {
     .lowerContainer {
         left: 200px;
     }
+
     .lower {
         left: 15px
     }
 }
 
-@-webkit-keyframes headerTop {
+@-webkit-keyframes header-top {
     0% {
         opacity: 0;
         transform: translateX(30px)
@@ -163,7 +170,7 @@
     }
 }
 
-@-webkit-keyframes searchBox {
+@-webkit-keyframes search-box {
     0% {
         opacity: 0;
         transform: translateX(30px)
@@ -174,7 +181,7 @@
     }
 }
 
-@keyframes searchBox {
+@keyframes search-box {
     0% {
         opacity: 0;
         transform: translateX(30px)

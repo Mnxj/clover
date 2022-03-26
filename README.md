@@ -43,6 +43,9 @@ yarn add front-matter remark remark-html --save
 
 # 解析markdown文件
 yarn add react-markdown
+# 解析目录
+yarn add markdown-navbar  # 这个是为了生成目录
+yarn add @types/markdown-navbar
 # 代码高亮
 # vscDarkPlus vscode 暗色主题
 # darcula  webstorm 暗色主题
