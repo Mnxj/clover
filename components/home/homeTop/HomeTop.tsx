@@ -1,6 +1,13 @@
 import styles from './HomeTop.module.css'
 
 export const HomeTop = () => {
+    const gotoContext = () => {
+        let anchorElement = document.getElementById("content"); // 须要定位看到的锚点元素
+        if (anchorElement){
+            anchorElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <div className={styles.homeTop}>
             <figure className={styles.centerBg}>
@@ -56,7 +63,7 @@ export const HomeTop = () => {
                     </div>
                 </div>
             </figure>
-            <div className={styles.homeTopDown}>
+            <div className={styles.homeTopDown} onClick={gotoContext}>
                 <span><i className="fa fa-chevron-down" aria-hidden="true"/></span>
             </div>
         </div>
