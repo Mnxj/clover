@@ -1,10 +1,33 @@
 import styles from './HomeTop.module.css'
+import {useRef, useState} from "react";
 
 export const HomeTop = () => {
+    const [openVideo, setOpenVideo] = useState(false);
+    const [playVideo, setPlayVideo] = useState(true);
+    const videoRef = useRef(null)
+
+
+    const play = () => {
+        if (!openVideo) {
+            setPlayVideo(false)
+            // @ts-ignore
+            videoRef.current.play()
+        } else {
+            // @ts-ignore
+            videoRef.current.pause()
+        }
+        setOpenVideo(!openVideo)
+    }
+
+    const videoEnd = () => {
+        setPlayVideo(true)
+        setOpenVideo(!openVideo)
+    }
+
     const gotoContext = () => {
-        let anchorElement = document.getElementById("content"); // 须要定位看到的锚点元素
-        if (anchorElement){
-            anchorElement.scrollIntoView({ behavior: 'smooth' });
+        let anchorElement = document.getElementById("content");
+        if (anchorElement) {
+            anchorElement.scrollIntoView({behavior: 'smooth'});
         }
     }
 
@@ -63,6 +86,21 @@ export const HomeTop = () => {
                     </div>
                 </div>
             </figure>
+            <div id="video-container">
+                <video
+                    id="bg-video"
+                    className={playVideo ? styles.bgInvalidVideo : styles.bgVideo}
+                    src="/media/thi.cb5608c2.mp4"
+                    width="auto"
+                    onEnded={videoEnd}
+                    ref={videoRef}
+                    preload="auto"
+                />
+                <div id="video-btn" className={openVideo ? styles.videoPause : styles.videoRun}
+                     onClick={play}/>
+                <div id="video-add"/>
+                <div className={(openVideo || playVideo) ? styles.videoStu : styles.videoStu0}>已暂停 ...</div>
+            </div>
             <div className={styles.homeTopDown} onClick={gotoContext}>
                 <span><i className="fa fa-chevron-down" aria-hidden="true"/></span>
             </div>

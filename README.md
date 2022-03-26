@@ -56,3 +56,7 @@ yarn add @types/react-syntax-highlighter
 yarn add remark-gfm
 
 ```
+
+Internet Explorer 10、Firefox 以及 Opera 支持 @keyframes 规则和 animation 属性。
+
+Chrome 和 Safari 需要前缀 -webkit-。
