@@ -35,7 +35,7 @@ export const HomeTop = () => {
         <div className={styles.homeTop}>
             <figure className={styles.centerBg}>
                 <div className={styles.centerContainer}>
-                    <h1 className={styles.centerTitle}>Clover</h1>
+                    <h1 className={styles.centerTitle} data-text="Clover">Clover</h1>
                     <div className={styles.centerInfo}>
                         <p>
                             <i className="fa fa-quote-left"/> 鼓捣在0和1之间的二货<i className="fa fa-quote-right"/>
