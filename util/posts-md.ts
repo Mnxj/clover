@@ -19,7 +19,6 @@ const absPath = (dir: string) => {
 export const getFileIds = async (dir = "./") => {
     const loc = absPath(dir);
     const files = await fsp.readdir(loc);
-    console.log(files)
     return files
         .filter((fn) => path.extname(fn) === `.${fileExt}`)
         .map((fn) => path.basename(fn, path.extname(fn)));
@@ -40,6 +39,10 @@ export const getFileData = async (dir = "./", id: string) => {
 
     const html = matter.body;
     const attributes = matter.attributes as Attributes;
+    console.log(attributes)
+    //访问时间，修改时间以及创建时间
+    console.log(stat.ctime)
+    console.log(stat.mtime)
     // 日期格式化
     const date = attributes.date || stat.ctime;
     attributes.dateYMD = dateformat.ymd(date);

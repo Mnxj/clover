@@ -448,7 +448,8 @@ div.directory {
     position: sticky;
     top: 0;
 }
-div.directory>.markdown-navigation {
+
+div.directory > .markdown-navigation {
     overflow: hidden;
     position: relative;
 }
@@ -464,18 +465,18 @@ div.directory>.markdown-navigation {
     cursor: pointer;
 }
 
-.title-level2 {
+.title-level2, .title-level3, .title-level4 {
     text-decoration: none;
     transition: 0.3s;
     color: currentColor;
     height: 100%;
 }
 
-.title-level2.active {
+.title-level2.active, .title-level3.active, .title-level4.active {
     font-weight: 700;
 }
 
-.title-level2:before {
+.title-level2:before, .title-level3:before, .title-level4:before {
     background-color: #eee;
     content: ' ';
     display: inline-block;
@@ -486,7 +487,7 @@ div.directory>.markdown-navigation {
     width: 2px;
 }
 
-.title-level2.active:before {
+.title-level2.active:before, .title-level3.active:before, .title-level4.active:before{
     background-color: orange !important;
 }
 
