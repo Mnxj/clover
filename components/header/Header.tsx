@@ -5,12 +5,18 @@ import {useEffect, useState} from "react";
 
 const Header = () => {
     const [scrollStyles, setScrollStyles] = useState(false);
+    const [scrollTopWidth, setScrollTopWidth] = useState(0);
+    const [scrollTopWidthFlag, setScrollTopWidthFlag] = useState(false);
     const handleScroll = () => {
-        if (window.scrollY > 60) {
+        setScrollTopWidthFlag(true)
+        if (document.documentElement.scrollTop > 60) {
             setScrollStyles(true)
         } else {
             setScrollStyles(false)
         }
+
+        // scrollHeight=clientHeight+scrollTop
+        setScrollTopWidth ((document.documentElement.scrollTop*100) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
     }
     const backTop = () => {
         setScrollStyles(false);
@@ -20,14 +26,20 @@ const Header = () => {
         }
     }
     useEffect(() => {
+        if (scrollTopWidth >= 98) {
+            setTimeout(() => {
+                setScrollTopWidthFlag(false)
+            }, 2000);
+        }
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, [scrollStyles]);
+    }, [scrollStyles,scrollTopWidth]);
 
     return (
         <div>
+            <div className={scrollTopWidthFlag?styles.scrollTop:''} style={{ "width": `${scrollTopWidth}%` }} />
             <a className={scrollStyles ? styles.cdTopVisible : styles.cdTop} onClick={backTop}/>
             <header className={scrollStyles ? styles.headerWhiteContainer : styles.headerContainer}>
                 <div className={styles.headerTop}>

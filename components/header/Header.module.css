@@ -4,7 +4,7 @@
     background: 0 0;
     transition: all .4s ease;
     position: fixed;
-    z-index: 9999;
+    z-index: 100;
     top: 0;
 }
 
@@ -14,7 +14,6 @@
     background-color: rgba(255, 255, 255, .95);
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
     top: 0;
-    z-index: 9999;
 }
 
 .headerContainer:after, .headerContainer:before {
@@ -166,6 +165,14 @@
 .headerTop .lower nav {
     -webkit-animation: header-top 1s;
     animation: header-top 1s;
+}
+.scrollTop{
+    height: 2px;
+    background-color: coral;
+    transition: width 1s;
+    position: fixed;
+    top: 0;
+    z-index: 101;
 }
 
 @media (max-width: 1200px) {

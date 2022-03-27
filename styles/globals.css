@@ -3,6 +3,7 @@ html,
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
     font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif;
     color: rgba(0, 0, 0, 0.85);
     font-size: 14px;

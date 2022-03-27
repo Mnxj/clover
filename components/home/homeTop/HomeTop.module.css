@@ -30,7 +30,7 @@
     padding-top: 1px;
 }
 
-.centerContainer {
+.centerContainer,.centerContainerInvalid {
     position: relative;
     max-width: 800px;
     padding: 0 10px;
@@ -41,6 +41,9 @@
     text-align: center;
     z-index: 99;
     transition: .4s ease all;
+}
+.centerContainerInvalid{
+    top: -999px;
 }
 
 .centerTitle {
