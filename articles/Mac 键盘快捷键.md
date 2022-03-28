@@ -1,11 +1,17 @@
 ---
 title: Mac 键盘快捷键
+date: 2021/10/13 20:46:25
+updated: 2021/10/13 20:46:25
+description: 您可以按下某些组合键来实现通常需要鼠标、触控板或其他输入设备才能完成的操作。
+img: http://img.xclient.info/attachment/2015/10/bf74de6b-c1f0-7323-74a7-4042c0e566c1.jpg
+categories:
+- 工具
 --- 
 
 您可以按下某些组合键来实现通常需要鼠标、触控板或其他输入设备才能完成的操作。
 
 要使用键盘快捷键，请按住一个或多个修饰键，然后按快捷键的最后一个键。例如，要使用 Command-C（拷贝），请按住 Command 键并按 C 键，然后同时松开这两个键。Mac 菜单和键盘通常[使用符号来表示某些按键](https://support.apple.com/zh-cn/guide/mac-help/what-are-those-symbols-shown-in-menus-cpmh0011/mac)，其中包括以下修饰键：
-
+12
 - Command（或 Cmd）⌘
 - Shift ⇧
 

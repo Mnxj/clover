@@ -1,5 +1,12 @@
 ---
 title: React学习笔记
+date: 2021/12/13 20:46:25
+updated: 2022/1/10 16:46:25
+description: 记录React学习过程的一些总结，和安装命令及避坑指南。
+img: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.shangxue.com%2Fuploads%2Fstorecourse%2F20181220%2F1545285603.jpg&refer=http%3A%2F%2Fwww.shangxue.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651060516&t=3e30a11968b26feb2147096b0586ae23
+categories:
+- React
+- 前端
 --- 
 
 token:   

@@ -2,7 +2,13 @@ import Link from "next/link";
 import {PostData} from "../../type/post-data";
 import styles from './DataList.module.css';
 import Router from "next/router";
+import {LazyImage} from "../lazyImage";
 
+const Categories:any = ({categories}: { categories: [] }) => {
+    return categories.map((category, index) => {
+        return <span key={index}><i className="fa fa-tag"/>{category}</span>
+    })
+}
 
 const DataList = ({postData}: { postData: [PostData] }) => {
     const pageLink = (link: string) => Router.push(link)
@@ -12,27 +18,25 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                 index % 2 === 0 ?
                     <article className={styles.primaryListThumb} key={index}>
                         <div className={styles.primaryThumb}>
-                            <a onClick={()=>pageLink(`/articles/${post.id}`)}>
-                                <img className="lazyload" src="/images/orange.svg"/>
+                            <a onClick={() => pageLink(`/articles/${post.id}`)}>
+                                <LazyImage imgUrl={post.img}/>
                             </a>
                         </div>
                         <div className={styles.primaryContent}>
                             <div>
                                 <div className={styles.primaryContentDate}>
-                                    <i className="iconfont icon-time"/>发布于 {post.dateYMD}
+                                    <i className="iconfont icon-time"/>更新于 {post.updateDate}
                                 </div>
-                                <a onClick={()=>pageLink(`/articles/${post.id}`)}>
+                                <a onClick={() => pageLink(`/articles/${post.id}`)}>
                                     <h3>{post.title}</h3>
                                 </a>
                                 <div className={styles.primaryContentMeta}>
                                     <span><i className="iconfont icon-attention"/>热度</span>
                                     <span className="comments-number"><i className="iconfont icon-mark"/>条评论</span>
-                                    <span><i className="iconfont icon-file"/>标签</span>
+                                    <Categories categories={post.categories}/>
                                 </div>
                                 <div className={styles.floatContent}>
-                                    <p>
-                                        测试
-                                    </p>
+                                    <p>{post.description}</p>
                                     <div>
                                         <Link href={`/articles/${post.id}`}>
                                             <a href="" className="button-normal"><i
@@ -45,16 +49,16 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                     </article> :
                     <article className={styles.primaryListThumb} key={index}>
                         <div className={styles.primaryThumbLeft}>
-                            <a onClick={()=>pageLink(`/articles/${post.id}`)}>
-                                <img className="lazyload" src="/images/orange.svg"/>
+                            <a onClick={() => pageLink(`/articles/${post.id}`)}>
+                                <LazyImage imgUrl={post.img}/>
                             </a>
                         </div>
                         <div className={styles.primaryContent}>
                             <div className={styles.primaryContentLeft}>
                                 <div className={styles.primaryContentDate}>
-                                    <i className="iconfont icon-time"/>发布于 {post.dateYMD}
+                                    <i className="iconfont icon-time"/>更新于 {post.updateDate}
                                 </div>
-                                <a onClick={()=>pageLink(`/articles/${post.id}`)}>
+                                <a onClick={() => pageLink(`/articles/${post.id}`)}>
                                     <h3>{post.title}</h3>
                                 </a>
                                 <div className={styles.primaryContentMeta}>
@@ -62,14 +66,13 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                                     <span className="comments-number"
                                     ><i className="iconfont icon-mark"/> 条评论</span
                                     >
-                                    <span><i className="iconfont icon-file"/>经验宝宝</span>
+                                    <Categories categories={post.categories}/>
                                 </div>
                                 <div className={styles.floatContent}>
-                                    <p>
-                                        sadasd
-                                    </p>
+                                    <p>{post.description}</p>
                                     <div>
-                                        <a onClick={()=>pageLink(`/articles/${post.id}`)} className="button-normal"><i className="iconfont icon-caidan"/></a>
+                                        <a onClick={() => pageLink(`/articles/${post.id}`)} className="button-normal"><i
+                                            className="iconfont icon-caidan"/></a>
                                     </div>
                                 </div>
                             </div>

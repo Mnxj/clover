@@ -5,7 +5,7 @@ const Layout = ({children}: any) => {
     return (
         <div>
             <section id="main-container">
-                <div id="main-header" className="site wrapper">
+                <div id="main-header" className="main-header">
                     <Header />
                 </div>
                 {children}

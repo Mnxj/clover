@@ -36,17 +36,13 @@ export const getFileData = async (dir = "./", id: string) => {
 
     const data = await fsp.readFile(file, "utf8");
     const matter = fm(data);
-
     const html = matter.body;
     const attributes = matter.attributes as Attributes;
-    console.log(attributes)
-    //访问时间，修改时间以及创建时间
-    console.log(stat.ctime)
-    console.log(stat.mtime)
     // 日期格式化
     const date = attributes.date || stat.ctime;
-    attributes.dateYMD = dateformat.ymd(date);
-    attributes.dateFriendly = dateformat.friendly(date);
+    const update = attributes.updated || stat.mtime;
+    attributes.createDate = dateformat.ymd(date);
+    attributes.updateDate = dateformat.ymd(update);
     // 计数
     const roundTo = 10,
         readPerMin = 200,
@@ -61,7 +57,6 @@ export const getFileData = async (dir = "./", id: string) => {
     attributes.wordCount = `本文字数：${numFormat.format(
         words
     )} 字    阅读完需：约 ${numFormat.format(mins)} 分钟`;
-
     return {
         id,
         html,
@@ -70,15 +65,13 @@ export const getFileData = async (dir = "./", id: string) => {
 }
 
 export const getAllFiles = async (dir: string) => {
-    const now = dateformat.ymd(new Date()),
-        files = await getFileIds(dir);
+    const files = await getFileIds(dir);
 
     const results = await Promise.allSettled(
         files.map((id) => getFileData(dir, id))
     )
-
     return results
-        .filter(result => result.status === 'fulfilled' && result.value && result.value.dateYMD <= now)
+        .filter(result => result.status === 'fulfilled' && result.value)
         .map((result) => (result as PromiseFulfilledResult<any>).value)
         .sort((a, b) => (a.dateYMD < b.dateYMD ? 1 : -1));
 }

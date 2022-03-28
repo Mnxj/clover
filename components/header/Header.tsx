@@ -71,6 +71,10 @@ const Header = () => {
                     </div>
                 </div>
             </header>
+
+            <button className={styles.mCdTop} title="Go to top" onClick={backTop}>
+                <i className="fa fa-chevron-up" aria-hidden="true"/>
+            </button>
         </div>
     );
 }

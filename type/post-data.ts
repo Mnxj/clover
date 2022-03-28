@@ -1,10 +1,13 @@
 export interface PostData {
     title: string;
-    description: string;
     html: string;
-    dateYMD: string;
-    dateFriendly: string;
     date: string;
     id: string
+    updated: Date;
+    description: string;
+    img: string;
+    categories: [];
+    createDate: string;
+    updateDate: string;
     wordCount: string
 }

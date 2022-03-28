@@ -16,6 +16,12 @@ body {
 a, area, button, [role='button'], input:not([type='range']), label, select, summary, textarea {
     touch-action: manipulation;
 }
+button, select {
+    text-transform: none;
+}
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
 
 h1, h2, h3, h4, h5, h6 {
     clear: both;
@@ -383,10 +389,13 @@ code {
     content: "\e92d";
 }
 
-.icon-file:before {
-    content: "\e60c";
+.fa-tag:before {
+    content: "\f02b";
 }
 
+.fa-chevron-up:before {
+    content: "\f077";
+}
 
 .icon-caidan:before {
     content: "\e618";
@@ -487,24 +496,33 @@ div.directory > .markdown-navigation {
     width: 2px;
 }
 
-.title-level2.active:before, .title-level3.active:before, .title-level4.active:before{
+.title-level2.active:before, .title-level3.active:before, .title-level4.active:before {
     background-color: orange !important;
 }
 
 /* header */
-.wrapper {
+.main-header {
     animation: fade-in;
     -webkit-animation-duration: .5s;
     animation-duration: .5s;
     -webkit-animation: fade-in .5s
 }
 
-body.dark #main-container, body.dark .wrapper .site-header:hover, body.dark i.iconfont.js-toggle-search.icon-search {
+@media (max-width: 860px) {
+    .main-header {
+        transition-duration: .5s;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
+
+body.dark #main-container, body.dark .main-header .site-header:hover, body.dark i.iconfont.js-toggle-search.icon-search {
     background: #31363b !important
 }
 
 
-#main-container, .wrapper, .directory {
+#main-container, .main-header, .directory {
     transition: background 1s
 }
 

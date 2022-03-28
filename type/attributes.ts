@@ -1,7 +1,11 @@
 export interface Attributes {
     title: string;
     date: Date;
-    dateYMD: string;
-    dateFriendly: string;
+    updated: Date;
+    description: string;
+    img: string;
+    categories: [];
+    createDate: string;
+    updateDate: string;
     wordCount: string;
 }

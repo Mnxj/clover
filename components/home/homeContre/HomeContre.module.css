@@ -37,3 +37,12 @@
     padding: 40px 0 0;
     margin-bottom: 80px;
 }
+@media (min-width: 860px) {
+    .homeContre {
+        padding: 0 4%;
+    }
+    .notice {
+        margin-bottom: 20px;
+    }
+
+}

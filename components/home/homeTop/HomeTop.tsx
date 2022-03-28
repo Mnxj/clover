@@ -86,7 +86,7 @@ export const HomeTop = () => {
                     </div>
                 </div>
             </figure>
-            <div id="video-container">
+            <div className={styles.videoContainer}>
                 <video
                     id="bg-video"
                     className={playVideo ? styles.bgInvalidVideo : styles.bgVideo}
