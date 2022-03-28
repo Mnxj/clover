@@ -1,6 +1,6 @@
 import styles from "./PageHeader.module.css";
 
-export const PageHeader = ({title,dateYMD,wordCount}:{title:string,dateYMD:string,wordCount:string}) => {
+export const PageHeader = ({title,createDate,updateDate,wordCount}:{title:string,createDate:string,updateDate:string,wordCount:string}) => {
     return (
         <div  className={styles.pageHeader}>
             <div className={styles.coverBg}>
@@ -12,7 +12,8 @@ export const PageHeader = ({title,dateYMD,wordCount}:{title:string,dateYMD:strin
                     <div className={styles.meta}>
                         <span className={styles.metaInfo}>
                             <span className={styles.authorInfo}>{wordCount}</span>
-                            <time className={styles.timeInfo}>{dateYMD}</time>
+                            <time className={styles.timeInfo}>{createDate}</time>
+                            <time className={styles.timeInfo}>{updateDate}</time>
                         </span>
                     </div>
                 </div>

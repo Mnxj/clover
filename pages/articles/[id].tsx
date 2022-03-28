@@ -14,7 +14,7 @@ const Article = ({postData}: { postData: PostData }) => {
                 <title>{postData.title}</title>
                 <meta name="description" content={postData.description}/>
             </Head>
-            <PageHeader title={postData.title} dateYMD={postData.dateYMD} wordCount={postData.wordCount} />
+            <PageHeader title={postData.title} createDate={postData.createDate} updateDate={postData.updateDate} wordCount={postData.wordCount} />
             <MarkDown source={postData.html} />
         </Layout>
     );
