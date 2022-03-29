@@ -45,6 +45,10 @@ h1.fes-title, h1.main-title {
 h1.fes-title, h1.main-title {
     transition: border 1s;
 }
+[type='search'] {
+    outline-offset: -2px;
+    -webkit-appearance: none;
+}
 
 h1 {
     font-size: 2em;
@@ -78,6 +82,11 @@ input, button, select, optgroup, textarea {
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
+    transition: 0.3s;
+    vertical-align: baseline;
+    background-color: #fff;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 button, input {
@@ -425,32 +434,6 @@ code {
     transform: scaleX(-1);
 }
 
-/* Layout */
-#main-container {
-    transition-duration: .5s;
-    position: relative;
-    overflow: hidden;
-    z-index: 2
-}
-
-#main-container.open:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: rgba(0, 0, 0, .4);
-    z-index: 99
-}
-
-#main-container.open {
-    transform: translateX(250px) translateY(0);
-    -webkit-transform: translateX(250px) translateY(0);
-    position: fixed;
-    right: 0;
-    left: 0
-}
-
-
 /*directory*/
 div.directory {
     position: -webkit-sticky;
@@ -501,28 +484,13 @@ div.directory > .markdown-navigation {
 }
 
 /* header */
-.main-header {
-    animation: fade-in;
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s;
-    -webkit-animation: fade-in .5s
-}
 
-@media (max-width: 860px) {
-    .main-header {
-        transition-duration: .5s;
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-}
-
-body.dark #main-container, body.dark .main-header .site-header:hover, body.dark i.iconfont.js-toggle-search.icon-search {
+body.dark #main-container, body.dark .mainHeader .site-header:hover, body.dark i.iconfont.js-toggle-search.icon-search {
     background: #31363b !important
 }
 
 
-#main-container, .main-header, .directory {
+#main-container, .mainHeader, .directory {
     transition: background 1s
 }
 

@@ -1,5 +1,5 @@
 import {getFileIds, getFileData} from "../../util/posts-md";
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/Layout";
 import Head from "next/head";
 import {PostData} from "../../type/post-data";
 import {Params} from "../../type/params";

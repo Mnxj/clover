@@ -20,3 +20,8 @@
 .siteInfo a:hover {
     color: orange
 }
+@media (max-width: 860px) {
+    .site-footer {
+        padding: 30px;
+    }
+}

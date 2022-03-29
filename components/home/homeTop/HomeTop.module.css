@@ -224,6 +224,7 @@
 @media (max-width: 860px) {
     .homeTop {
         height: auto!important;
+        width: 100%;
     }
     .homeTop:after {
         content: '';

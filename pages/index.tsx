@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from "../components/layout";
+import Layout from "../components/layout/Layout";
 import {HomeTop} from "../components/home/homeTop/HomeTop";
 import {HomeContre} from "../components/home/homeContre/HomeContre";
 import {getAllFiles} from "../util/posts-md";

@@ -73,5 +73,5 @@ export const getAllFiles = async (dir: string) => {
     return results
         .filter(result => result.status === 'fulfilled' && result.value)
         .map((result) => (result as PromiseFulfilledResult<any>).value)
-        .sort((a, b) => (a.dateYMD < b.dateYMD ? 1 : -1));
+        .sort((a, b) => (a.updateDate < b.updateDate ? 1 : -1));
 }
