@@ -17,7 +17,7 @@ const Footer = () => {
                     <a href="https://www.nextjs.cn" rel="noopener noreferrer" target="_blank"><Image src="/images/nextjs-logo.png" alt="Vercel" width={40} height={20}/>  </a>
                 </span>
                 <p>
-                    <a href="https://github.com/Mnxj" target="_blank">🐱‍🏍Clover🎶&nbsp;&nbsp;</a>© 2022 幸いです 全著作権所有.
+                    <a href="https://github.com/Mnxj" rel="noopener noreferrer" target="_blank">🐱‍🏍Clover🎶&nbsp;&nbsp;</a>© 2022 幸いです 全著作権所有.
                 </p>
 
             </div>
