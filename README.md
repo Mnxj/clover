@@ -46,6 +46,12 @@ yarn add react-markdown
 # 解析目录
 yarn add markdown-navbar  # 这个是为了生成目录
 yarn add @types/markdown-navbar
+# rehype-katex 解析数学公式
+# remark-math的配置
+yarn add rehype-katex  remark-math
+#生成目录
+yarn add remark-toc
+yarn add rehype-slug 
 # 代码高亮
 # vscDarkPlus vscode 暗色主题
 # darcula  webstorm 暗色主题
@@ -54,6 +60,9 @@ yarn add react-syntax-highlighter
 yarn add @types/react-syntax-highlighter
 # 处理表格和一些勾选项
 yarn add remark-gfm
+#处理网页
+yarn add rehype-raw
+
 
 ```
 

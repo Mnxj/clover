@@ -9,9 +9,10 @@ categories:
 - 前端
 --- 
 
-token:   
-
-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
+## 前言
+>记录React学习过程的一些总结，和安装命令及避坑指南。
+> 
+> 
 
 ```1shell
 #添加远程git仓库

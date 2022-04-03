@@ -110,8 +110,9 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    height: 67.5px;
+    height: 67px;
     overflow: hidden;
+    width: 200px;
 }
 
 .floatContent i {

@@ -2,13 +2,12 @@
 title: 基于vue技术的响应式博客设计与实现
 date: 2022/03/20 20:46:25
 updated: 2022/03/20 20:46:25
-description: vue3+vuecli4.5+springboot+reids+mybatis-plus  正好之前没用脚手架感觉编辑比较麻烦，用了脚手架翻遍了很多。
+description: vue3+vuecli4.5+springboot+reids+mybatis-plus正好之前没用脚手架感觉编辑比较麻烦，用了脚手架翻遍了很多。
 img: /images/md/Vue3blog.png
 categories:
 - Vue
 - 前端
 --- 
-# 基于vue技术的响应式博客设计与实现
 
 ## 前言
 
