@@ -5,30 +5,154 @@
     margin-right: auto;
     background-color: transparent !important;
 }
-.mdMain{
+
+.mdMain {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     margin-bottom: 80px;
     padding: 40px 0 0;
 }
-.md{
+
+.md {
     position: relative;
     padding: 40px 0 0;
+}
+
+.mdContext ul {
+    list-style: disc;
+    border: 1px dashed #e4e4e4;
+    padding: 15px 10px 15px 50px;
+    color: #616161;
+    margin-left: 0;
+    border-radius: 10px;
+}
+
+.mdContext ol {
+    list-style: decimal;
+    border: 1px dashed #e4e4e4;
+    padding: 15px 10px 15px 50px;
+    color: #616161;
+    margin-left: 0;
+    border-radius: 10px;
+}
+
+.mdContext h3:after {
+    content: "#";
+    left: 0;
+    position: absolute;
+    color: #ff6d6d;
+}
+
+.mdContext h3 {
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #ddd;
+    color: #737373;
+}
+
+.mdContext h4:after {
+    content: "▌";
+    left: 0;
+    position: absolute;
+    color: #ff6d6d;
+}
+
+.mdContext h3, .mdContext h4, .mdContext h5 {
+    padding-left: 16px;
+}
+
+.mdContext p code:not(.hljs) {
+    background: #fefac7;
+    color: #e67474;
+    word-break: break-word;
+    font-family: Source Code Pro, monospace;
+    padding: 2px;
+    text-shadow: none;
+    border-radius: 5px;
+}
+
+.mdContext a {
+    color: #e67474;
+    position: relative;
+}
+
+.mdContext ol li:before {
+    display: block;
+    float: left;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    margin: 4px 12px 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #49b1f5;
+    border-radius: 50%;
+    text-align: center;
+    content: counter(ol-li);
+    counter-increment: ol-li;
+    transition: all 0.5s;
+}
+
+.mdContext ol li:hover::before {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+
+.mdContext p img {
+    height: auto;
+    max-width: 100%;
+    border: 0;
+}
+
+.mdContext iframe {
+    position: relative;
+    width:100%;
+    height:600px;
 }
 
 .mdDirectory {
     z-index: 92;
     width: 200px;
-    height: 1024px;
+    height: 100%;
     background-color: rgba(255, 255, 255, 0);
     transform: translateX(0);
     right: calc((100% - 950px - 300px) / 2);
-    position: fixed;
-    top: 480px;
+    position: absolute;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.directory {
+    transition: background 1s;
+    overflow-y: auto;
+    position: sticky;
+    top: 100px
+}
+
+.directory > .directoryList {
+    overflow: hidden;
+    position: relative;
+}
+
+.directoryList li {
+    margin: 5px auto;
+}
+
+.directoryList {
+    margin: 0;
+    padding-left: 10px;
+}
+
+a.toc-link {
+    color: currentColor;
+    height: 100%;
+}
+
 
 @media (max-width: 860px) {
     .mdDirectory {

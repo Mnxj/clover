@@ -16,9 +16,11 @@ body {
 a, area, button, [role='button'], input:not([type='range']), label, select, summary, textarea {
     touch-action: manipulation;
 }
+
 button, select {
     text-transform: none;
 }
+
 button, html [type="button"], [type="reset"], [type="submit"] {
     -webkit-appearance: button;
 }
@@ -31,6 +33,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
+}
+code {
+    font-size: .9375rem;
+}
+
+h1[id*=toc-head]:before, h2[id*=toc-head]:before, h3[id*=toc-head]:before, h4[id*=toc-head]:before, h5[id*=toc-head]:before, h6[id*=toc-head]:before {
+    display: block;
+    content: " ";
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
 }
 
 h1.fes-title, h1.main-title {
@@ -45,6 +58,7 @@ h1.fes-title, h1.main-title {
 h1.fes-title, h1.main-title {
     transition: border 1s;
 }
+
 [type='search'] {
     outline-offset: -2px;
     -webkit-appearance: none;
@@ -67,6 +81,7 @@ a {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 p {
@@ -246,37 +261,6 @@ ol, ul {
     counter-reset: ol-li;
 }
 
-li, ul {
-    margin: 5px auto;
-}
-
-ol li:before {
-    display: block;
-    float: left;
-    width: 19px;
-    height: 19px;
-    line-height: 19px;
-    margin: 4px 12px 0 0;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 300;
-    font-style: normal;
-    background-color: #49b1f5;
-    border-radius: 50%;
-    text-align: center;
-    content: counter(ol-li);
-    counter-increment: ol-li;
-    transition: all 0.5s;
-}
-
-ol li:hover::before {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-}
-
 /*h2*/
 #markdown h2 {
     cursor: pointer;
@@ -435,21 +419,6 @@ code {
 }
 
 /*directory*/
-div.directory {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-}
-
-div.directory > .markdown-navigation {
-    overflow: hidden;
-    position: relative;
-}
-
-.markdown-navigation {
-    margin: 0;
-    padding-left: 10px;
-}
 
 .title-anchor {
     padding: 0 0 0 12px;

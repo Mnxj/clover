@@ -51,6 +51,7 @@ yarn add @types/markdown-navbar
 yarn add rehype-katex  remark-math
 #生成目录
 yarn add remark-toc
+# 给目录生成id
 yarn add rehype-slug 
 # 代码高亮
 # vscDarkPlus vscode 暗色主题

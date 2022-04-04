@@ -6,26 +6,38 @@ import gfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import remarkMath from 'remark-math'
 import rehypeRaw from "rehype-raw";
-import remarkToc from "remark-toc";
 import rehypeSlug from 'rehype-slug';
+import MarkNav from 'markdown-navbar';
+import MarkdownNavbar from 'markdown-navbar';
 
 export const MarkDown: React.FC<{ source: string }> = (props) => {
+    // @ts-ignore
     return (
         <div id="markdown" className={styles.markdownContent}>
             <div className="md-content">
                 <main id="main" className={styles.mdMain}>
                     <article id="post-md">
-                        <div className={styles.mdDirectory}>
-                            <div className="directory">
-                                {/*<MarkdownNavbar source={props.source} ordered={false}/>*/}
+                        <div id='md' className={styles.md}>
+                            <div className={styles.mdDirectory}>
+                                <div className={styles.directory}>
+                                    <ol className={styles.directoryList}>
+                                        <MarkdownNavbar source={props.source} ordered={false}/>
+                                        <li><a
+                                            className="toc-link node-name--H2 is-active-link">背景</a></li>
+                                        <li><a>安装PHP</a></li>
+                                        <li><a
+                                            className="toc-link node-name--H2">配置PHP处理器</a></li>
+                                        <li><a
+                                            className="toc-link node-name--H2">配置Nginx使用PHP</a></li>
+                                    </ol>
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.md}>
                             <ReactMarkdown
                                 key="content"
+                                className={styles.mdContext}
                                 children={props.source}
-                                remarkPlugins={[remarkToc, remarkMath, gfm]}
-                                rehypePlugins={[rehypeSlug,rehypeKatex, rehypeRaw]}
+                                remarkPlugins={[remarkMath, gfm]}
+                                rehypePlugins={[rehypeSlug, rehypeKatex, rehypeRaw]}
                                 components={{
                                     code({node, inline, className, children, ...props}) {
                                         const data = String(children).replace(/\n$/, '')
