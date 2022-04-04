@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
     color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
 }
+
 code {
     font-size: .9375rem;
 }
@@ -115,15 +116,11 @@ button, input {
 :after, :before {
     box-sizing: inherit;
 }
-@media (min-width: 860px) {
-    ::-webkit-scrollbar-thumb {
-        background-color: #69d2e7;
-    }
 
+@media (max-width: 860px) {
     ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-        background-color: #eee;
+        width: 0 !important;
+        height: 0;
     }
 
 }
