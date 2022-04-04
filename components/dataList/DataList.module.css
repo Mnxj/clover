@@ -188,6 +188,7 @@
 
     .primaryContentLeft {
         text-align: left;
+        padding-left: 0;
     }
 
     .floatContent p {
