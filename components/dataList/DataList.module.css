@@ -47,6 +47,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+}
+.primaryThumbLeft a {
+    border-radius: 10px 0 0 10px;
+}
+.primaryThumb a{
     border-radius: 0 10px 10px 0;
 }
 
