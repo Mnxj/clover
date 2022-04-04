@@ -1,3 +1,7 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 
 html,
 body {
@@ -122,10 +126,6 @@ button, input {
     ::-webkit-scrollbar {
         width: 0 !important;
         height: 0;
-    }
-
-    body {
-        overflow-x: hidden;
     }
 }
 
