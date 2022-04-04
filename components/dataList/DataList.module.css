@@ -25,12 +25,13 @@
     float: right;
     width: 55%;
 }
-.primaryThumbLeft{
+
+.primaryThumbLeft {
     float: left;
     width: 55%;
 }
 
-.primaryThumb a img,.primaryThumbLeft a img {
+.primaryThumb a img, .primaryThumbLeft a img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -39,7 +40,7 @@
     transition: all .6s;
 }
 
-.primaryThumb a ,.primaryThumbLeft a {
+.primaryThumb a, .primaryThumbLeft a {
     height: 300px;
     position: relative;
     display: block;
@@ -66,6 +67,7 @@
     width: 40%;
     margin: 20px 10px 0;
 }
+
 .primaryContentLeft {
     float: left;
     padding-left: 30px;
@@ -119,6 +121,7 @@
     font-size: 25px;
     color: #666;
 }
+
 .pagination {
     width: 100%;
     padding: 20px 0;
@@ -126,12 +129,14 @@
     margin: 40px 0 80px;
     display: inline-block;
 }
+
 .pagination a {
     padding: 13px 35px;
     border: 1px solid #d6d6d6;
     border-radius: 50px;
     color: #adadad;
 }
+
 .pagination a:hover {
     border: 1px solid #fe9600;
     -webkit-box-shadow: 0 0 4px #fe9600;
@@ -140,5 +145,59 @@
     box-shadow: 0 0 4px #fe9600;
     color: #fe9600;
     cursor: pointer;
+}
+
+@media (max-width: 860px) {
+    .primaryListThumb {
+        height: auto;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .primaryListThumb:before {
+        content: '';
+        width: 1px;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: -101px;
+        z-index: 0;
+    }
+
+    .primaryThumb, .primaryThumbLeft, .primaryContent {
+        width: 100%;
+        left: 0;
+    }
+
+    .primaryThumb a, .primaryThumbLeft a {
+        border-radius: 10px;
+    }
+
+    .primaryContent {
+        text-align: left;
+        margin: 0;
+        padding: 20px;
+        float: none;
+        box-shadow: none;
+        border-top: 0;
+    }
+
+    .primaryContentLeft {
+        text-align: left;
+    }
+
+    .floatContent p {
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+
+    .primaryContentButton {
+        display: none;
+    }
 }
 

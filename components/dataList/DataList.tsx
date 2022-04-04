@@ -23,7 +23,7 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                             </a>
                         </div>
                         <div className={styles.primaryContent}>
-                            <div>
+                            <div >
                                 <div className={styles.primaryContentDate}>
                                     <i className="iconfont icon-time"/>更新于 {post.updateDate}
                                 </div>
@@ -37,7 +37,7 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                                 </div>
                                 <div className={styles.floatContent}>
                                     <p>{post.description}</p>
-                                    <div>
+                                    <div className={styles.primaryContentButton}>
                                         <Link href={`/articles/${post.id}`}>
                                             <a href="" className="button-normal"><i
                                                 className="iconfont icon-caidan"/></a>
@@ -70,7 +70,7 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                                 </div>
                                 <div className={styles.floatContent}>
                                     <p>{post.description}</p>
-                                    <div>
+                                    <div className={styles.primaryContentButton}>
                                         <a onClick={() => pageLink(`/articles/${post.id}`)} className="button-normal"><i
                                             className="iconfont icon-caidan"/></a>
                                     </div>
