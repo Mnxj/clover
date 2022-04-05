@@ -5,9 +5,10 @@ import {PostData} from "../../type/post-data";
 import {PageHeader} from "../../components/markDown/PageHeader/PageHeader";
 import {GetStaticPaths, GetStaticProps} from "next";
 import dynamic from "next/dynamic";
+import {LoadAnimation} from "../../components/loadAnimation";
 
 const MarkDownDynamic:any = dynamic(() => import('../../components/markDown/MarkDown').then(mod => mod.MarkDown) as any,
-    {loading: () => <p>...</p>})
+    {loading: () => <LoadAnimation/>})
 
 const Article = ({postData}: { postData: PostData }) => {
     return (
