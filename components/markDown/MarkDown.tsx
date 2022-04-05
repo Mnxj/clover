@@ -7,11 +7,9 @@ import rehypeKatex from "rehype-katex";
 import remarkMath from 'remark-math'
 import rehypeRaw from "rehype-raw";
 import rehypeSlug from 'rehype-slug';
-import MarkNav from 'markdown-navbar';
 import MarkdownNavbar from 'markdown-navbar';
 
 export const MarkDown: React.FC<{ source: string }> = (props) => {
-    // @ts-ignore
     return (
         <div id="markdown" className={styles.markdownContent}>
             <div className="md-content">

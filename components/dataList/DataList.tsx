@@ -1,16 +1,15 @@
-import Link from "next/link";
 import {PostData} from "../../type/post-data";
 import styles from './DataList.module.css';
 import Router from "next/router";
 import {LazyImage} from "../lazyImage";
 
-const Categories:any = ({categories}: { categories: [] }) => {
+const Categories: any = ({categories}: { categories: [] }) => {
     return categories.map((category, index) => {
         return <span key={index}><i className="fa fa-tag"/>{category}</span>
     })
 }
 
-const DataList = ({postData}: { postData: [PostData] }) => {
+const DataList = ({postData}: { postData: PostData[] }) => {
     const pageLink = (link: string) => Router.push(link)
     return (
         <div>
@@ -23,7 +22,7 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                             </a>
                         </div>
                         <div className={styles.primaryContent}>
-                            <div >
+                            <div>
                                 <div className={styles.primaryContentDate}>
                                     <i className="iconfont icon-time"/>更新于 {post.updateDate}
                                 </div>
@@ -38,10 +37,8 @@ const DataList = ({postData}: { postData: [PostData] }) => {
                                 <div className={styles.floatContent}>
                                     <p>{post.description}</p>
                                     <div className={styles.primaryContentButton}>
-                                        <Link href={`/articles/${post.id}`}>
-                                            <a href="" className="button-normal"><i
-                                                className="iconfont icon-caidan"/></a>
-                                        </Link>
+                                        <a onClick={() => pageLink(`/articles/${post.id}`)} className="button-normal"><i
+                                            className="iconfont icon-caidan"/></a>
                                     </div>
                                 </div>
                             </div>

@@ -2,10 +2,12 @@ import {getFileIds, getFileData} from "../../util/posts-md";
 import Layout from "../../components/layout/Layout";
 import Head from "next/head";
 import {PostData} from "../../type/post-data";
-import {Params} from "../../type/params";
-import {MarkDown} from "../../components/markDown/MarkDown";
 import {PageHeader} from "../../components/markDown/PageHeader/PageHeader";
-import React from "react";
+import {GetStaticPaths, GetStaticProps} from "next";
+import dynamic from "next/dynamic";
+
+const MarkDownDynamic:any = dynamic(() => import('../../components/markDown/MarkDown').then(mod => mod.MarkDown) as any,
+    {loading: () => <p>...</p>})
 
 const Article = ({postData}: { postData: PostData }) => {
     return (
@@ -14,21 +16,20 @@ const Article = ({postData}: { postData: PostData }) => {
                 <title>{postData.title}</title>
                 <meta name="description" content={postData.description}/>
             </Head>
-            <PageHeader title={postData.title} createDate={postData.createDate} updateDate={postData.updateDate} wordCount={postData.wordCount} />
-            <MarkDown source={postData.html} />
+            <PageHeader title={postData.title} createDate={postData.createDate} updateDate={postData.updateDate}
+                        wordCount={postData.wordCount}/>
+            <MarkDownDynamic source={postData.html}/>
         </Layout>
     );
 }
 
-// post configuration
-const postsDir = "articles";
 
 /**
  * 获取博客路径信息
  * @returns [ { params: { id: 'article-01' } } ]
  */
-export const getStaticPaths = async () => {
-    const paths = (await getFileIds(postsDir)).map((id) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+    const paths = (await getFileIds()).map((id) => {
         return {params: {id}};
     });
     return {
@@ -39,13 +40,12 @@ export const getStaticPaths = async () => {
 
 /**
  * 解析路由获取详细内容
- * @param {*} param0
  * @returns
  */
-export const getStaticProps = async ({params}: { params: Params }) => {
+export const getStaticProps: GetStaticProps = async ({params: {id}}: any) => {
     return {
         props: {
-            postData: await getFileData(postsDir, params.id),
+            postData: await getFileData( id),
         },
     };
 }

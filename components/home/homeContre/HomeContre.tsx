@@ -2,7 +2,7 @@ import styles from './HomeContre.module.css'
 import DataList from "../../dataList/DataList";
 import {PostData} from "../../../type/post-data";
 
-export const HomeContre = ({ postData }:{postData:[PostData]}) => {
+export const HomeContre = ({ postData }:{postData:PostData[]}) => {
     return (
         <div id="content" className={styles.homeContre}>
             <div className={styles.notice}>

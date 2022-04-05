@@ -4,8 +4,13 @@ import {HomeTop} from "../components/home/homeTop/HomeTop";
 import {HomeContre} from "../components/home/homeContre/HomeContre";
 import {getAllFiles} from "../util/posts-md";
 import {PostData} from "../type/post-data";
+import {GetStaticProps, NextPage} from "next";
 
-const Home: ({postData}: { postData: [PostData] }) => JSX.Element = ({ postData }:{postData:[PostData]}) => {
+interface PostDataList{
+    postData: PostData[]
+}
+
+const Home: NextPage<PostDataList> = ({ postData }) => {
   return (
       <Layout>
           <Head>
@@ -20,10 +25,10 @@ const Home: ({postData}: { postData: [PostData] }) => JSX.Element = ({ postData 
       </Layout>
   )
 }
-export const getStaticProps = async () => {
+export const getStaticProps:GetStaticProps = async () => {
     return {
         props: {
-            postData: await getAllFiles("articles"),
+            postData: await getAllFiles(),
         },
     };
 }

@@ -5,6 +5,7 @@ import * as dateformat from "./dateformat";
 import {Attributes} from "../type/attributes";
 
 const fileExt = "md";
+const postsDir = "articles";
 
 // 获取文件夹相对路径
 const absPath = (dir: string) => {
@@ -13,11 +14,10 @@ const absPath = (dir: string) => {
 
 /**
  * 获取文件夹中 MarkDown 文件名列表，以数组形式返回
- * @param {*} dir
  * @returns
  */
-export const getFileIds = async (dir = "./") => {
-    const loc = absPath(dir);
+export const getFileIds = async () => {
+    const loc = absPath(postsDir);
     const files = await fsp.readdir(loc);
     return files
         .filter((fn) => path.extname(fn) === `.${fileExt}`)
@@ -26,12 +26,11 @@ export const getFileIds = async (dir = "./") => {
 
 /**
  * 获取单个 MarkDown 文件的内容
- * @param {*} dir
  * @param {*} id
  * @returns
  */
-export const getFileData = async (dir = "./", id: string) => {
-    const file = path.join(absPath(dir), `${id}.${fileExt}`),
+export const getFileData = async ( id: string) => {
+    const file = path.join(absPath(postsDir), `${id}.${fileExt}`),
         stat = await fsp.stat(file);
 
     const data = await fsp.readFile(file, "utf8");
@@ -64,11 +63,11 @@ export const getFileData = async (dir = "./", id: string) => {
     };
 }
 
-export const getAllFiles = async (dir: string) => {
-    const files = await getFileIds(dir);
+export const getAllFiles = async () => {
+    const files = await getFileIds();
 
     const results = await Promise.allSettled(
-        files.map((id) => getFileData(dir, id))
+        files.map((id) => getFileData(id))
     )
     return results
         .filter(result => result.status === 'fulfilled' && result.value)
