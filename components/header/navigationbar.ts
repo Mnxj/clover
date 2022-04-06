@@ -1,7 +1,7 @@
 
 export const roll = [
     {
-        link: "/index.html",
+        link: "/",
         span_text:'首页',
         span_class: "faa-parent animated-hover",
         i_class:'fa fa-fort-awesome faa-horizontal',
@@ -26,7 +26,7 @@ export const roll = [
         i_class:'fa fa-link faa-shake',
     },
     {
-        link: "/about.html",
+        link: "/about",
         span_text:'喔~',
         span_class: "faa-parent animated-hover",
         i_class:'fa fa-leaf faa-wrench',
