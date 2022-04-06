@@ -1,8 +1,8 @@
 export interface PostData {
-    title: string;
-    html: string;
-    date: string;
     id: string
+    title: string;
+    content: string;
+    date: string;
     updated: Date;
     description: string;
     img: string;

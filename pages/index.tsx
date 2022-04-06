@@ -1,30 +1,20 @@
-import Head from 'next/head'
-import Layout from "../components/layout/Layout";
-import {HomeTop} from "../components/home/homeTop/HomeTop";
-import {HomeContre} from "../components/home/homeContre/HomeContre";
 import {getAllFiles} from "../util/posts-md";
 import {PostData} from "../type/post-data";
 import {GetStaticProps, NextPage} from "next";
+import dynamic from "next/dynamic";
+import {LoadAnimation} from "../components/loadAnimation";
 
 interface PostDataList{
     postData: PostData[]
 }
 
-const Home: NextPage<PostDataList> = ({ postData }) => {
-  return (
-      <Layout>
-          <Head>
-              <title>Clover</title>
-              <meta
-                  name="description"
-                  content="这是一个由 Next.js 驱动的网站"
-              />
-          </Head>
-          <HomeTop/>
-          <HomeContre postData={postData}/>
-      </Layout>
-  )
+const HomeDynamic:any = dynamic(() => import('../components/home/home/home').then(mod => mod.Home) as any,
+    {loading: () => <LoadAnimation/>})
+
+const Index: NextPage<PostDataList> = ({ postData }) => {
+  return <HomeDynamic postData={postData}/>
 }
+
 export const getStaticProps:GetStaticProps = async () => {
     return {
         props: {
@@ -32,4 +22,4 @@ export const getStaticProps:GetStaticProps = async () => {
         },
     };
 }
-export default Home
+export default Index

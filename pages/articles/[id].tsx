@@ -19,7 +19,7 @@ const Article = ({postData}: { postData: PostData }) => {
             </Head>
             <PageHeader title={postData.title} createDate={postData.createDate} updateDate={postData.updateDate}
                         wordCount={postData.wordCount}/>
-            <MarkDownDynamic source={postData.html}/>
+            <MarkDownDynamic source={postData.content}/>
         </Layout>
     );
 }
@@ -46,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({params: {id}}: any) => {
     return {
         props: {
-            postData: await getFileData( id),
+            postData: await getFileData(id),
         },
     };
 }

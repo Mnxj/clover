@@ -4,7 +4,6 @@ import fm from "front-matter";
 import * as dateformat from "./dateformat";
 import {Attributes} from "../type/attributes";
 
-const fileExt = "md";
 const postsDir = "articles";
 
 // 获取文件夹相对路径
@@ -20,7 +19,7 @@ export const getFileIds = async () => {
     const loc = absPath(postsDir);
     const files = await fsp.readdir(loc);
     return files
-        .filter((fn) => path.extname(fn) === `.${fileExt}`)
+        .filter((fn) => path.extname(fn) === `.md`)
         .map((fn) => path.basename(fn, path.extname(fn)));
 }
 
@@ -30,12 +29,12 @@ export const getFileIds = async () => {
  * @returns
  */
 export const getFileData = async ( id: string) => {
-    const file = path.join(absPath(postsDir), `${id}.${fileExt}`),
+    const file = path.join(absPath(postsDir), `${id}.md`),
         stat = await fsp.stat(file);
 
     const data = await fsp.readFile(file, "utf8");
     const matter = fm(data);
-    const html = matter.body;
+    const content = matter.body;
     const attributes = matter.attributes as Attributes;
     // 日期格式化
     const date = attributes.date || stat.ctime;
@@ -58,7 +57,7 @@ export const getFileData = async ( id: string) => {
     )} 字    阅读完需：约 ${numFormat.format(mins)} 分钟`;
     return {
         id,
-        html,
+        content,
         ...attributes,
     };
 }
@@ -69,6 +68,7 @@ export const getAllFiles = async () => {
     const results = await Promise.allSettled(
         files.map((id) => getFileData(id))
     )
+    console.log(results)
     return results
         .filter(result => result.status === 'fulfilled' && result.value)
         .map((result) => (result as PromiseFulfilledResult<any>).value)
