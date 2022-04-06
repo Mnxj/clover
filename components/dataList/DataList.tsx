@@ -17,7 +17,7 @@ const DataList = ({postData}: { postData: PostData[] }) => {
                 index % 2 === 0 ?
                     <article className={styles.primaryListThumb} key={index}>
                         <div className={styles.primaryThumb}>
-                            <a onClick={() => pageLink(`/articles/${post.id}`)}>
+                            <a onClick={() => pageLink(`/articles/${post.id}.html`)}>
                                 <LazyImage imgUrl={post.img}/>
                             </a>
                         </div>
@@ -26,7 +26,7 @@ const DataList = ({postData}: { postData: PostData[] }) => {
                                 <div className={styles.primaryContentDate}>
                                     <i className="iconfont icon-time"/>更新于 {post.updateDate}
                                 </div>
-                                <a onClick={() => pageLink(`/articles/${post.id}`)}>
+                                <a onClick={() => pageLink(`/articles/${post.id}.html`)}>
                                     <h3>{post.title}</h3>
                                 </a>
                                 <div className={styles.primaryContentMeta}>
@@ -37,7 +37,7 @@ const DataList = ({postData}: { postData: PostData[] }) => {
                                 <div className={styles.floatContent}>
                                     <p>{post.description}</p>
                                     <div className={styles.primaryContentButton}>
-                                        <a onClick={() => pageLink(`/articles/${post.id}`)} className="button-normal"><i
+                                        <a onClick={() => pageLink(`/articles/${post.id}.html`)} className="button-normal"><i
                                             className="iconfont icon-caidan"/></a>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@ const DataList = ({postData}: { postData: PostData[] }) => {
                     </article> :
                     <article className={styles.primaryListThumb} key={index}>
                         <div className={styles.primaryThumbLeft}>
-                            <a onClick={() => pageLink(`/articles/${post.id}`)}>
+                            <a onClick={() => pageLink(`/articles/${post.id}.html`)}>
                                 <LazyImage imgUrl={post.img}/>
                             </a>
                         </div>
@@ -55,7 +55,7 @@ const DataList = ({postData}: { postData: PostData[] }) => {
                                 <div className={styles.primaryContentDate}>
                                     <i className="iconfont icon-time"/>更新于 {post.updateDate}
                                 </div>
-                                <a onClick={() => pageLink(`/articles/${post.id}`)}>
+                                <a onClick={() => pageLink(`/articles/${post.id}.html`)}>
                                     <h3>{post.title}</h3>
                                 </a>
                                 <div className={styles.primaryContentMeta}>
@@ -68,7 +68,7 @@ const DataList = ({postData}: { postData: PostData[] }) => {
                                 <div className={styles.floatContent}>
                                     <p>{post.description}</p>
                                     <div className={styles.primaryContentButton}>
-                                        <a onClick={() => pageLink(`/articles/${post.id}`)} className="button-normal"><i
+                                        <a onClick={() => pageLink(`/articles/${post.id}.html`)} className="button-normal"><i
                                             className="iconfont icon-caidan"/></a>
                                     </div>
                                 </div>
